@@ -27,6 +27,12 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'content-type': 'text/css' });
     res.write(homeStyles);
     res.end();
+  }
+  // image
+  else if (url === '/logo.svg') {
+    res.writeHead(200, { 'content-type': 'image/svg+xml' });
+    res.write(homeImage);
+    res.end();
   } else {
     res.writeHead(404, { 'content-type': 'text/html' });
     res.write('<h1>Not found</h1>');
