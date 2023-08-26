@@ -15,8 +15,13 @@ app.get('/api/products', (req, res) => {
   res.json(newProduct);
 });
 
-app.get('/api/products/1', (req, res) => {
-  const singleProduct = products.find((product) => product.id === 1);
+app.get('/api/products/:productID', (req, res) => {
+  // console.log(req);
+  // console.log(req.params);
+  const { productID } = req.params;
+  const singleProduct = products.find(
+    (product) => product.id === Number(productID),
+  );
   res.json(singleProduct);
 });
 
