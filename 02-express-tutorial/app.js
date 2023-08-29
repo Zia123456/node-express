@@ -41,6 +41,10 @@ app.get('/api/v1/query', (req, res) => {
       return product.name.startsWith(search);
     });
   }
+  if (limit) {
+    sortedProducts = sortedProducts.slice(0, Number(limit));
+  }
+  res.status(200).json(sortedProducts);
   res.send('hello wd');
 });
 
