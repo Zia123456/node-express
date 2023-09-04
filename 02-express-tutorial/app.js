@@ -7,11 +7,11 @@ const authorize = require('./authorize');
 app.use([logger, authorize]);
 
 app.get('/', (req, res) => {
-  res.send('<h1>Home</h1>');
+  res.send('<h1>Welcome to home page</h1>');
 });
 
 app.get('/about', (req, res) => {
-  res.send('<h1>About</h1>');
+  res.send('<h1>Welcome to about page</h1>');
 });
 
 app.get('/api/products', (req, res) => {
