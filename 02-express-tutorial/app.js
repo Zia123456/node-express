@@ -18,7 +18,7 @@ app.get('/api/products', (req, res) => {
   res.send('<h1>Products</h1>');
 });
 
-app.get('/api/items', (req, res) => {
+app.get('/api/items', [logger, authorize], (req, res) => {
   res.send('<h1>Items</h1>');
 });
 
