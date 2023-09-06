@@ -5,8 +5,8 @@ const logger = require('./logger');
 const authorize = require('./authorize');
 
 // req => middleware => res
-app.use([logger, authorize]);
-
+// app.use([logger, authorize]);
+app.use(morgan('tiny'));
 app.get('/', (req, res) => {
   res.send('<h1>Welcome to home page</h1>');
 });
