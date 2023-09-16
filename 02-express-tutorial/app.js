@@ -63,7 +63,7 @@ app.put('/api/people/:id', (req, res) => {
 });
 
 app.delete('/api/people/:id', (req, req) => {
-  const person = people.find((person) => person.id === Number(id));
+  const person = people.find((person) => person.id === Number(req.params.id));
   if (!person) {
     return res
       .status(404)
