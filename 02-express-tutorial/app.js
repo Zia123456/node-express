@@ -3,6 +3,14 @@ const app = express();
 
 let { people } = require('./data');
 
+app.post('/login', (req, res) => {
+  const { name } = req.body;
+  if (name) {
+    return res.status(200).send(`Welcome ${name}`);
+  }
+  res.status(401).send('Please Provide Credentials');
+});
+
 // static assets
 app.use(express.static('./methods-public'));
 // parse form data
@@ -32,14 +40,6 @@ app.post('/api/postman/people', (req, res) => {
       .json({ success: false, msg: 'please provide name value' });
   }
   res.status(201).send({ success: true, data: [...people, name] });
-});
-
-app.post('/login', (req, res) => {
-  const { name } = req.body;
-  if (name) {
-    return res.status(200).send(`Welcome ${name}`);
-  }
-  res.status(401).send('Please Provide Credentials');
 });
 
 app.put('/api/people/:id', (req, res) => {
