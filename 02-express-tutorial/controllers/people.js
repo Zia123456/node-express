@@ -46,3 +46,10 @@ const deletePerson = (req, req) => {
   );
   return res.status(200).json({ success: true, data: newPeople });
 };
+
+module.exports = {
+  getPeople,
+  createPersonPostman,
+  updatePerson,
+  deletePerson,
+};
