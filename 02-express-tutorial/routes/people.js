@@ -7,25 +7,9 @@ router.get('/', (req, res) => {
   res.status(200).json({ success: true, data: people });
 });
 
-router.post('/', (req, res) => {
-  const { name } = req.body;
-  if (!name) {
-    return res
-      .status(400)
-      .json({ success: false, msg: 'please provide name value' });
-  }
-  res.status(201).send({ Success: true, person: name });
-});
+router.post('/');
 
-router.post('/people', (req, res) => {
-  const { name } = req.body;
-  if (!name) {
-    return res
-      .status(400)
-      .json({ success: false, msg: 'please provide name value' });
-  }
-  res.status(201).send({ success: true, data: [...people, name] });
-});
+router.post('/people');
 
 router.put('/:id', (req, res) => {
   const { id } = req.params;
