@@ -59,6 +59,7 @@ const deletePerson = (req, req) => {
 
 module.exports = {
   getPeople,
+  createPerson,
   createPersonPostman,
   updatePerson,
   deletePerson,
